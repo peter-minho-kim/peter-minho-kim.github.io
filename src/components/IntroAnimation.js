@@ -7,7 +7,8 @@ class IntroAnimation extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.refs.introAnimationWrapper.style.opacity = '0'
-    }, 5500)
+      this.refs.introAnimationWrapper.style.zIndex = '-1'
+    }, 5000)
   }
   render() {
     return (

@@ -1,0 +1,15 @@
+.nav {  
+  display: flex;
+  flex-direction: column-reverse;
+
+  &__link, &:link {
+    color: $black;
+    font-size: $l-font;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+}
