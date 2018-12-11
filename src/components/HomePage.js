@@ -1,8 +1,9 @@
 import React from 'react'
+import IntroAnimation from './IntroAnimation'
 
 const HomePage = () => (
   <div>
-    <h1>herro world</h1>
+    <IntroAnimation />
   </div>
 )
 

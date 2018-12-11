@@ -1,3 +1,19 @@
+@mixin intro-animation {
+  animation: introAnimation 1.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $white 50%);
+  background-size: 260%;
+  color: transparent;
+  font-size: $xxl-font;
+  font-weight: 400;
+  margin: 0;
+  padding: .5rem 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .3s;
+}
+
 @mixin respond-1800-width {
   @media (min-width: 112.5em) { @content };
 }

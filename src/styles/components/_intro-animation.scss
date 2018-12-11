@@ -1,0 +1,26 @@
+.intro-animation-wrapper {
+  background-color: $black;
+  height: 100vh;
+  transition: all 1s;
+}
+
+.intro-animation {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+
+  &__text--name {
+    @include intro-animation;
+    animation-delay: 1s;
+    width: 18rem;
+  }
+
+  &__text--title {
+    @include intro-animation;
+    animation-delay: 3.3s;
+    width: 36rem;
+  }
+}

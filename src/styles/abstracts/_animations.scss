@@ -1,0 +1,19 @@
+@-webkit-keyframes introAnimation {
+  0% {
+    background-position: 0%;
+  }
+
+  20% {
+    background-position: 100%;
+    color: #242424;
+  }
+
+  80% {
+    background-position: 100%;
+    color: #242424;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
