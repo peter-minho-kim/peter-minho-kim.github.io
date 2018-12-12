@@ -18,15 +18,13 @@
 
   &__text--name {
     @include intro-animation;
-    animation: slideAnimation 1.1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation-delay: 1s;
     width: 18rem;
   }
 
   &__text--title {
     @include intro-animation;
-    animation: slideAnimation 1.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation-delay: 2.8s;
+    animation-delay: 3.4s;
     width: 36rem;
   }
 }

@@ -1,12 +1,9 @@
 import React from 'react'
-import IntroAnimation from './IntroAnimation'
-import Navigation from './Navigation'
-import Header from './Header'
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
-    <div>
-      <IntroAnimation history={props.history} />
+    <div className="hello-container">
+      hello
     </div>
   )
 }

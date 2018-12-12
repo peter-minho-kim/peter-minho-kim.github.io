@@ -11,7 +11,7 @@ import PortfolioPage from '../components/PortfolioPage'
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <IntroAnimation />
+      {/*<IntroAnimation />*/}
       <Header />
       <Navigation />
       <Switch>
