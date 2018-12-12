@@ -1,0 +1,35 @@
+.about {
+  position: absolute;
+    left: 15%;
+    bottom: 30%;
+  width: 100rem;
+  
+  &__portrait {
+    background-image: linear-gradient(
+      to bottom right, 
+      rgba(83, 209, 254, .4), 
+      rgba(255, 255, 255, .7)), 
+      url(/images/peter.jpg);
+    background-position: top; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 45rem;
+    width: 30rem;
+  }
+
+  &__content {
+    position: absolute;
+      bottom: 2.5rem;
+      left: 24.5rem;
+    width: 75rem;
+
+    &__text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.1rem;
+
+      &:not(:last-child) {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+}
