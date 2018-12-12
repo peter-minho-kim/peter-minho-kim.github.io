@@ -1,0 +1,27 @@
+.footer {
+  position: absolute;
+    right: 5rem;
+    bottom: 5rem;
+
+  &__social-link {
+    display: inline-block;
+    font-size: $m-font;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      background-position: 100%;
+      color: $black;
+
+    }
+  }
+
+  &__fa {
+    @include text-animation;
+    color: $black;
+    padding: .5rem;
+    transition: background-position .5s, color .7s;
+  }
+}

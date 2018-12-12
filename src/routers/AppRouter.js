@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import AboutPage from '../components/AboutPage'
+import Footer from '../components/Footer'
 import HomePage from '../components/HomePage'
 import Header from '../components/Header'
 import IntroAnimation from '../components/IntroAnimation'
@@ -20,6 +21,7 @@ const AppRouter = () => (
         <Route path="/portfolio" component={PortfolioPage} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 )
