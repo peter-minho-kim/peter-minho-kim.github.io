@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom'
 
 const Header = () => (
   <header className="header">
-    <NavLink to="/">
+    {/*<NavLink to="/">
       <img 
         src="./images/logo.svg" 
         alt="portfolio logo"  
         className="header__logo" 
       />
-    </NavLink>
+</NavLink>*/}
   </header>
 )
 

@@ -14,7 +14,7 @@ const AppRouter = () => (
     <div>
       {/*<IntroAnimation />*/}
       <Header />
-      <Navigation />
+      {/*<Navigation />*/}
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/about" component={AboutPage} />

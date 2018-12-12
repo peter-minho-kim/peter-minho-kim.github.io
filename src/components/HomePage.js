@@ -1,25 +1,27 @@
 import React from 'react'
+import Navigation from './Navigation'
 
 class HomePage extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
   componentDidMount() {
     document.body.style.overflow = 'hidden'
     setTimeout(() => {
       document.body.style.overflow = 'auto'
-    }, 2000)
+    }, 1000)
   }
   render() {
     return (
       <div>
-        <div className="hello-container">
+        <Navigation history={this.props.history} />
+        <div className="hello-container slide-in-left">
           hello
         </div>
 
         <div className="about">
-          <div className="about__portrait"></div>
-          <div className="about__content">
+          <div className="about__portrait slide-in-right"></div>
+          <div className="about__content slide-in-bottom ">
             <p className="about__content__text">
               I'm Peter Kim, front-end developer, user experience aficionado, and lover of great design.
             </p>

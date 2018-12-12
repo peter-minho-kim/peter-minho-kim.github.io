@@ -1,9 +1,18 @@
 import React from 'react'
+import Navigation from './Navigation'
 
-const PortfolioPage = () => (
-  <div>
-    <h1>THIS IS THE PORTFOLIO PAGE</h1>
-  </div>
-)
+class PortfolioPage extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div>
+        <Navigation history={this.props.history} />
+        <h1>THIS IS THE PORTFOLIO PAGE</h1>
+      </div>
+    )
+  }
+}
 
 export default PortfolioPage

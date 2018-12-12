@@ -5,7 +5,6 @@
   width: 100rem;
   
   &__portrait {
-    animation: slideInRight .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation-delay: .3s;
     background-image: linear-gradient(
       to bottom right, 
@@ -20,14 +19,13 @@
   }
 
   &__content {
+    animation-delay: .6s;
     position: absolute;
       bottom: 2.5rem;
       left: 29.5rem;
     width: 75rem;
 
     &__text {
-      animation: slideInBottom .5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-      animation-delay: .6s;
       font-family: 'Montserrat', sans-serif;
       font-size: 3.1rem;
 

@@ -7,11 +7,17 @@
   -webkit-transform-origin: top left;
           transform-origin: top left;
   
+  &__list {
+    display: flex;
+  }
+  
 
   &__link, &:link {
     border-bottom: 3px solid transparent;
     color: $black;
+    cursor: pointer;
     font-size: $l-font;
+    list-style: none;
     text-decoration: none;
     text-transform: uppercase;
 
