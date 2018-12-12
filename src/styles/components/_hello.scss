@@ -2,8 +2,9 @@
   color: $gray;
   font-size: 30vw;
   font-weight: 500;
+  pointer-events: none;
   position: absolute;
-    top: 0;
+    bottom: 50vh;
     right: 0;
   text-transform: uppercase;
 }
