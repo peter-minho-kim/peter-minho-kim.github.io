@@ -1,8 +1,15 @@
 .nav {  
   display: flex;
-  flex-direction: column-reverse;
+  position: absolute;
+    top: 50%;
+  -webkit-transform: rotate(-90deg) translate(-50%);
+          transform: rotate(-90deg) translate(-50%);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  
 
   &__link, &:link {
+    border-bottom: 3px solid transparent;
     color: $black;
     font-size: $l-font;
     text-decoration: none;
@@ -12,4 +19,8 @@
       margin-right: 5rem;
     }
   }
+}
+
+.is-active {
+  border-color: $light-blue;
 }
