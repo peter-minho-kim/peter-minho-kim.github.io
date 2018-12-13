@@ -1,18 +1,18 @@
 .project-wrapper {
   background-color: $dark-gray;
+  height: 66%;
   position: absolute;
     top: 50%;
     left: 50%;
   transform: translate(-50%, -50%);
-  height: 110rem;
   width: 110rem;
 
-  & img {
+  & video {
     transition: all .3s;
   }
 
-  &:hover img {
-    opacity: .3;
+  &:hover video {
+    opacity: .1;
   }
 
   &:hover .project-text {
@@ -33,7 +33,7 @@
     border-top: 3px solid $white;
     border-bottom: 3px solid $white;
     transform: scale(0, 1);
-    transition: transform ease-out .45s;
+    transition: transform ease-out .65s;
     z-index: -1;
   }
 
@@ -41,7 +41,7 @@
     border-left: 3px solid $white;
     border-right: 3px solid $white;
     transform: scale(1, 0);
-    transition: transform ease-out .45s;
+    transition: transform ease-out .65s;
     z-index: -1;
   }
 

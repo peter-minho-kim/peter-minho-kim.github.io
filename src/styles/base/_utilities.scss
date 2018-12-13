@@ -41,3 +41,11 @@
 .u-margin-top-xl {
   margin-top: 12rem !important;
 }
+
+.inactive-link {
+  color: darken(#F5F5F5, 12%);
+}
+
+.active-link {
+  color: $black;
+}

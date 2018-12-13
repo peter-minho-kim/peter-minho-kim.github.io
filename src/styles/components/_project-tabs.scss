@@ -6,9 +6,14 @@
     display: inline-block;
     font-size: $m-font;
     text-transform: uppercase;
+    transition: all .3s;
 
     &:not(:last-child) {
       margin-right: 3rem;
+    }
+
+    &:hover {
+      color: $black;
     }
   }
 }
