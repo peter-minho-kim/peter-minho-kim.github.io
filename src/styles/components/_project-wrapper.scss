@@ -1,0 +1,55 @@
+.project-wrapper {
+  background-color: $dark-gray;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  height: 110rem;
+  width: 110rem;
+
+  & img {
+    transition: all .3s;
+  }
+
+  &:hover img {
+    opacity: .3;
+  }
+
+  &:hover .project-text {
+    opacity: 1;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+      top: 5rem;
+      right: 5rem;
+      bottom: 5rem;
+      left: 5rem;
+  }
+
+  &::before {
+    border-top: 3px solid $white;
+    border-bottom: 3px solid $white;
+    transform: scale(0, 1);
+    transition: transform ease-out .45s;
+    z-index: -1;
+  }
+
+  &::after {
+    border-left: 3px solid $white;
+    border-right: 3px solid $white;
+    transform: scale(1, 0);
+    transition: transform ease-out .45s;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: scale(1, 1);
+  }
+
+  &:hover::after {
+    transform: scale(1, 1);
+  }
+}

@@ -1,0 +1,14 @@
+.project-tabs {
+  text-align: center;
+
+  &__title {
+    cursor: pointer;
+    display: inline-block;
+    font-size: $m-font;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+}
