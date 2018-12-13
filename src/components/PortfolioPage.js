@@ -13,30 +13,55 @@ class PortfolioPage extends React.Component {
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
   }
   handleLuciditySelect() {
-    this.setState(() => {
-      return {
-        projectView: 'lucidity',
-        projectUrl: 'https://lucidity-app.herokuapp.com/',
-        projectPath: './videos/lucidity-demo.mp4'
-      }
-    })
+    if (this.state.projectView === 'cryptiq') {
+      this.refs.projectWrapper.classList.add('fade-out-in')
+
+      setTimeout(() => {
+        this.setState(() => {
+          return {
+            projectView: 'lucidity',
+            projectUrl: 'https://lucidity-app.herokuapp.com/',
+            projectPath: './videos/lucidity-demo.mp4'
+          }
+        })
+      }, 500)
+
+      setTimeout(() => {
+        this.refs.projectWrapper.classList.remove('fade-out-in')
+      }, 1100)
+    }
     this.refs.lucidityLink.classList.add('active-link')
     this.refs.lucidityLink.classList.remove('inactive-link')
     this.refs.cryptiqLink.classList.remove('active-link')
     this.refs.cryptiqLink.classList.add('inactive-link')
   }
   handleCryptiqSelect() {
-    this.setState(() => {
-      return {
-        projectView: 'cryptiq',
-        projectUrl: 'https://cryptiq.herokuapp.com/',
-        projectPath: './videos/cryptiq-demo.mp4'
-      }
-    })
+    if (this.state.projectView === 'lucidity') {
+      this.refs.projectWrapper.classList.add('fade-out-in')
+
+      setTimeout(() => {
+        this.setState(() => {
+          return {
+            projectView: 'cryptiq',
+            projectUrl: 'https://cryptiq.herokuapp.com/',
+            projectPath: './videos/cryptiq-demo.mp4'
+          }
+        })
+      }, 500)
+
+      setTimeout(() => {
+        this.refs.projectWrapper.classList.remove('fade-out-in')
+      }, 1100)
+    }
     this.refs.cryptiqLink.classList.remove('inactive-link')
     this.refs.cryptiqLink.classList.add('active-link')
     this.refs.lucidityLink.classList.add('inactive-link')
     this.refs.lucidityLink.classList.remove('active-link')
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.refs.projectWrapper.classList.remove('fade-in')
+    }, 1200)
   }
   render() {
     return (
@@ -59,7 +84,7 @@ class PortfolioPage extends React.Component {
           </h2>
         </div>
 
-        <div className="project-wrapper">
+        <div className="project-wrapper fade-in" ref="projectWrapper">
           <div className="project-video-box project-video-box--lucidity">
             <a href={this.state.projectUrl} target="_blank">
               <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
