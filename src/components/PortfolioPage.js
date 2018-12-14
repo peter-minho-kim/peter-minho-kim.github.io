@@ -62,6 +62,8 @@ class PortfolioPage extends React.Component {
     document.body.style.overflow = 'hidden'
     setTimeout(() => {
       this.refs.projectWrapper.classList.remove('slide-in-bottom-center')
+      this.refs.lucidityLink.classList.remove('slide-in-right')
+      this.refs.cryptiqLink.classList.remove('slide-in-left')
       document.body.style.overflowY = 'auto'
       document.body.style.overflowX = 'hidden'
     }, 1500)
@@ -72,14 +74,14 @@ class PortfolioPage extends React.Component {
         <Navigation history={this.props.history} />
         <div className="project-tabs">
           <h2 
-            className="project-tabs__title active-link slide-in-right" 
+            className="project-tabs__title active-link slide-in-right lucidity-link" 
             onClick={this.handleLuciditySelect}
             ref="lucidityLink"
           >
             Lucidity
           </h2>
           <h2 
-            className="project-tabs__title inactive-link slide-in-left" 
+            className="project-tabs__title inactive-link slide-in-left cryptiq-link" 
             onClick={this.handleCryptiqSelect}
             ref="cryptiqLink"
           >
