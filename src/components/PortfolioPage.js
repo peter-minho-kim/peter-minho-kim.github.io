@@ -88,17 +88,33 @@ class PortfolioPage extends React.Component {
           <div className="project-video-box project-video-box--lucidity">
             <a href={this.state.projectUrl} target="_blank">
               <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
-              <div>
                 {this.state.projectView === 'lucidity' ? 
-                  <p className="project-text">
-                    LUCIDITY LUCIDITY 
-                  </p>
+                  <div className="project-text">
+                    <h2 className="project-text__header">
+                      lucidity
+                    </h2>
+                    <p className="project-text__about u-margin-bottom-m">
+                      An experimental React application that allows users to document their dreams 
+                      and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
+                    </p>
+                    <p className="project-text__hashtags">
+                      #react #redux #front-end development #interactive design #ux design
+                    </p>
+                  </div>
                   :
-                  <p className="project-text">
-                    CRYPTIQ CRYPTIQ
-                  </p>
+                  <div className="project-text">
+                    <h2 className="project-text__header">
+                      cryptiq
+                    </h2>
+                    <p className="project-text__about u-margin-bottom-m">
+                      A mock cryptocurrency e-commerce platform that takes the user through an intuitive and unequivocal 
+                      process of purchasing Bitcoin, Ethereum, and Iota.
+                    </p>
+                    <p className="project-text__hashtags">
+                      #react #redux #front-end development #interactive design #ux design
+                    </p>
+                  </div>
                 }
-              </div>
             </a>
           </div>         
         </div>
