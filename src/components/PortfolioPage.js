@@ -59,9 +59,12 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('active-link')
   }
   componentDidMount() {
+    document.body.style.overflow = 'hidden'
     setTimeout(() => {
-      this.refs.projectWrapper.classList.remove('fade-in')
-    }, 1200)
+      this.refs.projectWrapper.classList.remove('slide-in-bottom-center')
+      document.body.style.overflowY = 'auto'
+      document.body.style.overflowX = 'hidden'
+    }, 1500)
   }
   render() {
     return (
@@ -69,14 +72,14 @@ class PortfolioPage extends React.Component {
         <Navigation history={this.props.history} />
         <div className="project-tabs">
           <h2 
-            className="project-tabs__title active-link" 
+            className="project-tabs__title active-link slide-in-right" 
             onClick={this.handleLuciditySelect}
             ref="lucidityLink"
           >
             Lucidity
           </h2>
           <h2 
-            className="project-tabs__title inactive-link" 
+            className="project-tabs__title inactive-link slide-in-left" 
             onClick={this.handleCryptiqSelect}
             ref="cryptiqLink"
           >
@@ -84,7 +87,7 @@ class PortfolioPage extends React.Component {
           </h2>
         </div>
 
-        <div className="project-wrapper fade-in" ref="projectWrapper">
+        <div className="project-wrapper slide-in-bottom-center" ref="projectWrapper">
           <div className="project-video-box project-video-box--lucidity">
             <a href={this.state.projectUrl} target="_blank">
               <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
@@ -107,7 +110,7 @@ class PortfolioPage extends React.Component {
                       cryptiq
                     </h2>
                     <p className="project-text__about u-margin-bottom-m">
-                      A mock cryptocurrency e-commerce platform that takes the user through an intuitive and unequivocal 
+                      A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
                       process of purchasing Bitcoin, Ethereum, and Iota.
                     </p>
                     <p className="project-text__hashtags">

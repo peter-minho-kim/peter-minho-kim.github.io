@@ -120,7 +120,7 @@
 
 @-webkit-keyframes slideInBottom {
   0% {
-    transform: translateY(100vw);
+    transform: translateY(100vh);
   }
 
   100% {
@@ -130,11 +130,31 @@
 
 @keyframes slideInBottom {
   0% {
-    transform: translateY(100vw);
+    transform: translateY(100vh);
   }
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideInBottomCenter {
+  0% {
+    transform: translate(-50%, 100vh);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideInBottomCenter {
+  0% {
+    transform: translate(-50%, 100vh);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -224,6 +244,10 @@
 
 .slide-in-bottom {
   animation: slideInBottom .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.slide-in-bottom-center {
+  animation: slideInBottomCenter .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-out-bottom {

@@ -11,6 +11,7 @@ class Navigation extends React.Component {
       setTimeout(() => {
         this.props.history.push('/')
       }, 300)
+      document.body.style.overflow = 'hidden'
     }
     this.refs.aboutLink.classList.add('active-link')
     this.refs.aboutLink.classList.remove('inactive-link')
@@ -28,7 +29,6 @@ class Navigation extends React.Component {
       document.querySelector('.about__content').classList.add('slide-out-bottom')    
       setTimeout(() => {
         this.props.history.push('/portfolio')
-        document.body.style.overflow = 'auto'
       }, 1200)
     }
     this.refs.aboutLink.classList.remove('active-link')
