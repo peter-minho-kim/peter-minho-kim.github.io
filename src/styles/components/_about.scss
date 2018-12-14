@@ -1,8 +1,26 @@
 .about {
+  padding: 2rem;
   position: absolute;
     left: 15%;
     bottom: 30%;
   width: 100rem;
+
+  @include width-1140 {
+    width: 100%;
+  }
+
+  @include width-650 {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include width-572 {
+    display: flex;
+    flex-direction: column;
+    transform: translate(0, 15%);
+    padding: 0;
+    position: static;
+  }
   
   &__portrait {
     animation-delay: .3s;
@@ -16,14 +34,25 @@
     background-size: cover;
     height: 50rem;
     width: 35rem;
+
+    @include width-572 {
+      height: 50rem;
+      width: 100%;
+    }
   }
 
   &__content {
     animation-delay: .6s;
+    padding: 3rem;
     position: absolute;
       bottom: 2.5rem;
       left: 29.5rem;
-    width: 75rem;
+
+    @include width-572 {
+      padding: 0;
+      position: static;
+      text-align: center;
+    }
 
     &__text {
       font-family: 'Montserrat', sans-serif;

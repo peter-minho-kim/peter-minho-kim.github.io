@@ -5,10 +5,10 @@ class IntroAnimation extends React.Component {
     super()
   }
   componentDidMount() {
-    setTimeout(() => {
-      this.refs.introAnimationWrapper.style.opacity = '0'
-      this.refs.introAnimationWrapper.style.zIndex = '-1'
-    }, 5500)
+    // setTimeout(() => {
+    //   this.refs.introAnimationWrapper.style.opacity = '0'
+    //   this.refs.introAnimationWrapper.style.zIndex = '-1'
+    // }, 5500)
   }
   render() {
     return (

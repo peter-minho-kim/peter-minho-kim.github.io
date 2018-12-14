@@ -9,15 +9,15 @@
 html {
   font-size: 62.5%;
 
-  @include respond-1800-width {
+  @include width-1800 {
     font-size: 75%;
   }
 
-  @include respond-1200-width {
+  @include width-1200 {
     font-size: 56.25%;
   }
 
-  @include respond-900-width {
+  @include width-900 {
     font-size: 50%;
   }
 }
@@ -27,6 +27,10 @@ body {
   font-weight: 400;
   line-height: 1.7;
   padding: 5rem;
+
+  @include width-650 {
+    padding: 2rem;
+  }
 }
 
 button {

@@ -20,8 +20,8 @@ class HomePage extends React.Component {
         </div>
 
         <div className="about">
-          <div className="about__portrait slide-in-right"></div>
-          <div className="about__content slide-in-bottom ">
+          <div className="about__portrait slide-in-right u-margin-bottom-s"></div>
+          <div className="about__content slide-in-bottom u-margin-bottom-m">
             <p className="about__content__text">
               I'm Peter Kim, front-end developer, user experience designer, and lover of tacos.
             </p>
