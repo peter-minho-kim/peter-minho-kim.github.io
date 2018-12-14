@@ -14,12 +14,16 @@
 
   &__link, &:link {
     border-bottom: 3px solid transparent;
-    color: $black;
     cursor: pointer;
     font-size: $l-font;
     list-style: none;
     text-decoration: none;
     text-transform: uppercase;
+    transition: color .3s;
+
+    &:hover {
+      color: $black;
+    }
 
     &:not(:last-child) {
       margin-right: 5rem;

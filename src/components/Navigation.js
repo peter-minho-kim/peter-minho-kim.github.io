@@ -8,8 +8,14 @@ class Navigation extends React.Component {
   }
   handleAboutLink() {
     if (window.location.pathname === '/portfolio') {
-      this.props.history.push('/')
+      setTimeout(() => {
+        this.props.history.push('/')
+      }, 300)
     }
+    this.refs.aboutLink.classList.add('active-link')
+    this.refs.aboutLink.classList.remove('inactive-link')
+    this.refs.portfolioLink.classList.add('inactive-link')
+    this.refs.portfolioLink.classList.remove('active-link')
   }
   handlePortfolioLink() {
     if (window.location.pathname === '/') {
@@ -19,19 +25,39 @@ class Navigation extends React.Component {
       document.querySelector('.about__portrait').classList.remove('slide-in-right')
       document.querySelector('.about__portrait').classList.add('slide-out-left')
       document.querySelector('.about__content').classList.remove('slide-in-bottom')
-      document.querySelector('.about__content').classList.add('slide-out-bottom')
+      document.querySelector('.about__content').classList.add('slide-out-bottom')    
       setTimeout(() => {
         this.props.history.push('/portfolio')
         document.body.style.overflow = 'auto'
       }, 1200)
+    }
+    this.refs.aboutLink.classList.remove('active-link')
+    this.refs.aboutLink.classList.add('inactive-link')
+    this.refs.portfolioLink.classList.remove('inactive-link')
+    this.refs.portfolioLink.classList.add('active-link')
+  }
+  componentDidMount() {
+    if (this.props.history.location.pathname === '/portfolio') {
+      this.refs.aboutLink.classList.remove('active-link')
+      this.refs.aboutLink.classList.add('inactive-link')
+      this.refs.portfolioLink.classList.remove('inactive-link')
+      this.refs.portfolioLink.classList.add('active-link')
+    } else if (this.props.history.location.pathname === '/') {
+      this.refs.aboutLink.classList.add('active-link')
+      this.refs.aboutLink.classList.remove('inactive-link')
+      this.refs.portfolioLink.classList.add('inactive-link')
+      this.refs.portfolioLink.classList.remove('active-link')
+    } else {
+      this.refs.aboutLink.classList.add('inactive-link')
+      this.refs.portfolioLink.classList.add('inactive-link')
     }
   }
   render() {
     return (
       <nav className="nav">
         <ul className="nav__list">
-          <li className="nav__link" onClick={this.handleAboutLink}>about</li>
-          <li className="nav__link" onClick={this.handlePortfolioLink}>portfolio</li>
+          <li className="nav__link active-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
+          <li className="nav__link inactive-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
         </ul>
       </nav>
     )
