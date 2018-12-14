@@ -61,6 +61,9 @@ class Navigation extends React.Component {
         <ul className="nav__list">
           <li className="nav__link active-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
           <li className="nav__link inactive-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
+          <a href="/assets/peter-kim-resume.pdf" className="nav__link inactive-link" target="_blank">
+            <li>resume</li>
+          </a>
         </ul>
       </nav>
     )
