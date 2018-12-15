@@ -6,14 +6,19 @@
           transform: rotate(-90deg) translate(-50%);
   -webkit-transform-origin: top left;
           transform-origin: top left;
+  overflow: hidden;
+
+  @include width-715 {
+    position: fixed;
+      top: 0;
+    transform: none;
+  }          
   
   &__list {
     display: flex;
   }
-  
 
-  &__link, &:link {
-    border-bottom: 3px solid transparent;
+  &__link, &:link, &__link a {
     cursor: pointer;
     font-size: $l-font;
     list-style: none;
@@ -28,6 +33,22 @@
     &:not(:last-child) {
       margin-right: 5rem;
     }
+  }
+
+  &__social-link {
+    display: none;
+    
+    @include width-715 {
+      display: inline-block;
+    }
+  }
+}
+
+#nav__link--resume {
+  margin-right: 0;
+
+  @include width-715 {
+    margin-right: 5rem;
   }
 }
 

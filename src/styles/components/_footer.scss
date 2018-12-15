@@ -18,6 +18,10 @@
     }
   }
 
+  @include width-715 {
+    display: none;
+  }
+
   &__fa {
     @include text-animation;
     color: $black;
