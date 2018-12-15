@@ -6,11 +6,13 @@
           transform: rotate(-90deg) translate(-50%);
   -webkit-transform-origin: top left;
           transform-origin: top left;
+  transition: all .3s;
+  z-index: 1;
 
   @include width-715 {
     display: block;
-    position: static;
-    top: 0;
+    position: fixed;
+    top: 2rem;
     transform: none;
   }          
   
@@ -20,7 +22,8 @@
 
     @include width-715 {
       display: block;
-      max-height: 0;
+      // max-height: 0;
+      height: 0;
       overflow: hidden;
     }
   }
@@ -69,11 +72,17 @@
     height: 45px;
     position: relative;
 
-    &--top, &--bottom {
-      position: absolute;
+    &:hover &-line {
+      color: $black;
     }
 
-    &--bottom {
+    &-line {
+      color: darken(#F5F5F5, 20%);
+      position: absolute;
+      transition: all .4s;
+    }
+
+    &-line--bottom {
       top: 8px;
     }
   }
@@ -92,5 +101,20 @@
 }
 
 .nav--open {
-  max-height: 20em;
+  // max-height: 20em;
+  height: 100vh;
+}
+
+.nav-toggle-top {
+  color: $black;
+  transform: translate(3px, 3px) rotate(135deg);
+}
+
+.nav-toggle-bottom {
+  color: $black;
+  transform: translate(0, -5px) rotate(-135deg);
+}
+
+.nav-background {
+  background-color: $white;
 }

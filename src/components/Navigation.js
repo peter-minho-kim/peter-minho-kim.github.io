@@ -41,7 +41,10 @@ class Navigation extends React.Component {
     this.refs.portfolioLink.classList.add('active-link')
   }
   handleNavToggle() {
+    this.refs.nav.classList.toggle('nav-background')
     this.refs.navList.classList.toggle('nav--open')
+    this.refs.navToggleTop.classList.toggle('nav-toggle-top')
+    this.refs.navToggleBottom.classList.toggle('nav-toggle-bottom')
   }
   componentDidMount() {
     if (this.props.history.location.pathname === '/portfolio') {
@@ -61,11 +64,11 @@ class Navigation extends React.Component {
   }
   render() {
     return (
-      <nav className="nav">
+      <nav className="nav" ref="nav">
         <div className="nav__mobile-handle" onClick={this.handleNavToggle}>
           <div className="nav__toggle">
-            <span className="nav__toggle--top">&mdash;</span>
-            <span className="nav__toggle--bottom">&mdash;</span>
+            <span className="nav__toggle-line nav__toggle-line--top" ref="navToggleTop">&mdash;</span>
+            <span className="nav__toggle-line nav__toggle-line--bottom" ref="navToggleBottom">&mdash;</span>
           </div>
         </div>
         <ul className="nav__list" ref="navList">
