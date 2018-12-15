@@ -5,6 +5,7 @@ class Navigation extends React.Component {
     super(props)
     this.handlePortfolioLink = this.handlePortfolioLink.bind(this)
     this.handleAboutLink = this.handleAboutLink.bind(this)
+    this.handleNavToggle = this.handleNavToggle.bind(this)
   }
   handleAboutLink() {
     if (window.location.pathname === '/portfolio') {
@@ -39,6 +40,9 @@ class Navigation extends React.Component {
     this.refs.portfolioLink.classList.remove('inactive-link')
     this.refs.portfolioLink.classList.add('active-link')
   }
+  handleNavToggle() {
+    this.refs.navList.classList.toggle('nav--open')
+  }
   componentDidMount() {
     if (this.props.history.location.pathname === '/portfolio') {
       this.refs.aboutLink.classList.remove('active-link')
@@ -58,7 +62,13 @@ class Navigation extends React.Component {
   render() {
     return (
       <nav className="nav">
-        <ul className="nav__list">
+        <div className="nav__mobile-handle" onClick={this.handleNavToggle}>
+          <div className="nav__toggle">
+            <span className="nav__toggle--top">&mdash;</span>
+            <span className="nav__toggle--bottom">&mdash;</span>
+          </div>
+        </div>
+        <ul className="nav__list" ref="navList">
           <li className="nav__link active-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
           <li className="nav__link inactive-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
           <li className="nav__link" id="nav__link--resume">
