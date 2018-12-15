@@ -45,6 +45,11 @@ class Navigation extends React.Component {
     this.refs.navList.classList.toggle('nav--open')
     this.refs.navToggleTop.classList.toggle('nav-toggle-top')
     this.refs.navToggleBottom.classList.toggle('nav-toggle-bottom')
+    
+    const navLinks = document.querySelectorAll('.nav__link')
+    navLinks.forEach((link) => {
+      link.classList.toggle('fade-in-left')
+    })
   }
   componentDidMount() {
     if (this.props.history.location.pathname === '/portfolio') {
@@ -72,15 +77,15 @@ class Navigation extends React.Component {
           </div>
         </div>
         <ul className="nav__list" ref="navList">
-          <li className="nav__link active-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
-          <li className="nav__link inactive-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
-          <li className="nav__link" id="nav__link--resume">
+          <li className="nav__link active-link about-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
+          <li className="nav__link inactive-link portfolio-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
+          <li className="nav__link resume-link" id="nav__link--resume">
             <a href="/assets/peter-kim-resume.pdf" className="inactive-link" target="_blank">resume</a>
           </li>
-          <li className="nav__link inactive-link nav__social-link">
+          <li className="nav__link inactive-link nav__social-link linkedin-link">
             <a href="https://www.linkedin.com/in/peter-kim-developer/" className="inactive-link" target="_blank">linkedin</a>
           </li>
-          <li className="nav__link inactive-link nav__social-link">
+          <li className="nav__link inactive-link nav__social-link github-link">
             <a href="https://github.com/peter-minho-kim" className="inactive-link" target="_blank">github</a>
           </li>
         </ul>
