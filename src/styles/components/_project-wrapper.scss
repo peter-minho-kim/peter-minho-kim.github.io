@@ -25,10 +25,10 @@
   &::after {
     content: '';
     position: absolute;
-      top: 5rem;
-      right: 5rem;
-      bottom: 5rem;
-      left: 5rem;
+      top: 5%;
+      right: 3%;
+      bottom: 5%;
+      left: 3%;
   }
 
   &::before {
@@ -37,6 +37,14 @@
     transform: scale(0, 1);
     transition: transform ease-out .65s;
     z-index: -1;
+
+    @include width-1000 {
+      border-width: 2px;
+    }
+
+    @include width-600 {
+      border-width: 1px;
+    }
   }
 
   &::after {
@@ -45,6 +53,14 @@
     transform: scale(1, 0);
     transition: transform ease-out .65s;
     z-index: -1;
+
+    @include width-1000 {
+      border-width: 2px;
+    }
+
+     @include width-600 {
+      border-width: 1px;
+    }
   }
 
   &:hover::before {

@@ -92,36 +92,56 @@ class PortfolioPage extends React.Component {
 
           <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
             <div className="project-video-box project-video-box--lucidity">
-              <a href={this.state.projectUrl} target="_blank">
+              
                 <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
                   {this.state.projectView === 'lucidity' ? 
                     <div className="project-text">
                       <h2 className="project-text__header">
                         lucidity
                       </h2>
-                      <p className="project-text__about u-margin-bottom-m">
+                      <p className="project-text__about u-margin-bottom-s">
                         An experimental React application that allows users to document their dreams 
                         and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
                       </p>
-                      <p className="project-text__hashtags">
+                      <p className="project-text__hashtags u-margin-bottom-m">
                         #react #redux #front-end development #interactive design #ux design
                       </p>
+                      <div className="project-button-wrapper">
+                        <button className="project-button">
+                          view case
+                        </button>
+                        <a href={this.state.projectUrl} target="_blank">
+                          <button className="project-button">
+                            view project
+                          </button>
+                        </a>
+                      </div>
                     </div>
                     :
                     <div className="project-text">
                       <h2 className="project-text__header">
                         cryptiq
                       </h2>
-                      <p className="project-text__about u-margin-bottom-m">
+                      <p className="project-text__about u-margin-bottom-s">
                         A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
                         process of purchasing Bitcoin, Ethereum, and Iota.
                       </p>
-                      <p className="project-text__hashtags">
+                      <p className="project-text__hashtags u-margin-bottom-m">
                         #react #redux #front-end development #interactive design #ux design
                       </p>
+                      <div className="project-button-wrapper">
+                        <button className="project-button">
+                          view case
+                            </button>
+                        <a href={this.state.projectUrl} target="_blank">
+                          <button className="project-button">
+                            view project
+                          </button>
+                        </a>
+                      </div>
                     </div>
                   }
-              </a>
+              
             </div>  
             
             <div className="project-bottom-bar"></div>

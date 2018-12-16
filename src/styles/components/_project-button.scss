@@ -1,0 +1,21 @@
+.project-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  
+  .project-button {
+    border: none;
+    color: $black;
+    font-family: inherit;
+    font-size: $d-font;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

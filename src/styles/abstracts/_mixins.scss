@@ -52,6 +52,10 @@
   @media (max-width: 69.0625em) { @content };
 }
 
+@mixin width-1000 {
+  @media (max-width: 62.5em) { @content };
+}
+
 @mixin width-900 {
   @media (max-width: 56.25em) { @content };
 }
@@ -78,4 +82,16 @@
 
 @mixin width-572 {
   @media (max-width: 35.75em) { @content };
+}
+
+@mixin width-510 {
+  @media (max-width: 31.875em) { @content };
+}
+
+@mixin width-490 {
+  @media (max-width: 30.625em) { @content };
+}
+
+@mixin width-390 {
+  @media (max-width: 24.375em) { @content };
 }
