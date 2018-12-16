@@ -28,8 +28,12 @@
 
 // MEDIA QUERIES
 
-@mixin width-1800 { 
+@mixin width-1800-min { 
   @media (min-width: 112.5em) { @content };
+}
+
+@mixin width-1800 {
+  @media (max-width: 112.5em) { @content };
 }
 
 @mixin width-1380 {

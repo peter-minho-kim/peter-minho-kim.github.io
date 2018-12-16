@@ -9,7 +9,7 @@
 html {
   font-size: 62.5%;
 
-  @include width-1800 {
+  @include width-1800-min {
     font-size: 75%;
   }
 
