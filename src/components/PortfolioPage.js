@@ -90,6 +90,7 @@ class PortfolioPage extends React.Component {
         </div>
 
         <div className="project-wrapper slide-in-bottom-center" ref="projectWrapper">
+        <p>testing</p>
           <div className="project-video-box project-video-box--lucidity">
             <a href={this.state.projectUrl} target="_blank">
               <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
@@ -123,7 +124,7 @@ class PortfolioPage extends React.Component {
             </a>
           </div>  
           
-          <div className="test"></div>
+          <div className="project-bottom-bar"></div>
         </div>
       </div>
     )
