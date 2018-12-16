@@ -61,7 +61,7 @@ class PortfolioPage extends React.Component {
   componentDidMount() {
     document.body.style.overflow = 'hidden'
     setTimeout(() => {
-      this.refs.projectWrapper.classList.remove('slide-in-bottom-center')
+      this.refs.projectWrapper.classList.remove('slide-in-bottom')
       this.refs.lucidityLink.classList.remove('slide-in-right')
       this.refs.cryptiqLink.classList.remove('slide-in-left')
       document.body.style.overflowY = 'auto'
@@ -90,7 +90,7 @@ class PortfolioPage extends React.Component {
             </h2>
           </div>
 
-          <div className="project-wrapper slide-in-bottom-center" ref="projectWrapper">
+          <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
             <div className="project-video-box project-video-box--lucidity">
               <a href={this.state.projectUrl} target="_blank">
                 <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>

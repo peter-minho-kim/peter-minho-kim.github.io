@@ -12,7 +12,7 @@ class Navigation extends React.Component {
       document.body.style.overflow = 'hidden'
       document.querySelector('.lucidity-link').classList.add('slide-out-left')
       document.querySelector('.cryptiq-link').classList.add('slide-out-right')
-      document.querySelector('.project-wrapper').classList.add('slide-out-bottom-center')
+      document.querySelector('.project-wrapper').classList.add('slide-out-bottom')
       setTimeout(() => {
         this.props.history.push('/')
       }, 1000)
