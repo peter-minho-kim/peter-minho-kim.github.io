@@ -18,16 +18,16 @@
     transform: none;
   }          
   
-  &__list {
-    background-color: $white;
+  &__list {  
     display: flex;
     transition: all .5s;
 
     @include width-715 {
+      background-color: $white;
       flex-direction: column;
-      // max-height: 0;
       height: 0;
       width: 100vw;
+      opacity: 0;
       overflow: hidden;
       padding-top: 3rem;
     }
@@ -73,7 +73,7 @@
     font-size: $l-font;
 
     @include width-715 {
-      display: block;
+      display: inline-block;
     }
   }
 
@@ -110,7 +110,6 @@
 }
 
 .nav--open {
-  // max-height: 20em;
   height: 100vh;
   width: 100vw;
 }
@@ -125,6 +124,10 @@
   transform: translate(0, -5px) rotate(-135deg);
 }
 
+.nav--visible {
+  opacity: 1;
+}
+
 .nav-background {
   background-color: $white;
 }
@@ -134,17 +137,17 @@
 }
 
 .portfolio-link {
-  animation-delay: .4s;
+  animation-delay: .3s;
 }
 
 .resume-link {
-  animation-delay: .6s;
+  animation-delay: .5s;
 }
 
 .linkedin-link {
-  animation-delay: .8s;
+  animation-delay: .7s;
 }
 
 .github-link {
-  animation-delay: 1s;
+  animation-delay: .9s;
 }

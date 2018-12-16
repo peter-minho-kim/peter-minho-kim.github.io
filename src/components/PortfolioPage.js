@@ -121,7 +121,9 @@ class PortfolioPage extends React.Component {
                   </div>
                 }
             </a>
-          </div>         
+          </div>  
+          
+          <div className="test"></div>
         </div>
       </div>
     )

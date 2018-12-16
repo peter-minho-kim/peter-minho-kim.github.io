@@ -32,6 +32,10 @@
   @media (min-width: 112.5em) { @content };
 }
 
+@mixin width-1380 {
+  @media (max-width: 86.25em) { @content };
+}
+
 @mixin width-1200 {
   @media (max-width: 75em) { @content };
 }

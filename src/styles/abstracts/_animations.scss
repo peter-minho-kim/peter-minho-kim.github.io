@@ -64,7 +64,7 @@
   }
 
   100% {
-    transform: translateX(-100vh);
+    transform: translateX(-100vw);
   }
 }
 
@@ -74,7 +74,7 @@
   }
 
   100% {
-    transform: translateX(-100vh);
+    transform: translateX(-100vw);
   }
 }
 
@@ -275,7 +275,7 @@
 }
 
 .slide-out-left {
-  animation: slideOutLeft .9s cubic-bezier(0.590, 0.575, 0.565, 1.000) both;
+  animation: slideOutLeft .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-in-right {
@@ -283,7 +283,7 @@
 }
 
 .slide-out-right {
-  animation: slideOutRight .9s cubic-bezier(0.590, 0.575, 0.565, 1.000) both;
+  animation: slideOutRight .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-in-bottom {
