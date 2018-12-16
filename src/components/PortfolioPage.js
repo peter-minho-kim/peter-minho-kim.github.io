@@ -72,60 +72,62 @@ class PortfolioPage extends React.Component {
     return (
       <div>
         <Navigation history={this.props.history} />
-        <div className="project-tabs">
-          <h2 
-            className="project-tabs__title active-link slide-in-right lucidity-link" 
-            onClick={this.handleLuciditySelect}
-            ref="lucidityLink"
-          >
-            Lucidity
-          </h2>
-          <h2 
-            className="project-tabs__title inactive-link slide-in-left cryptiq-link" 
-            onClick={this.handleCryptiqSelect}
-            ref="cryptiqLink"
-          >
-            CryptiQ
-          </h2>
+        <div className="portfolio-wrapper">
+          <div className="project-tabs">
+            <h2 
+              className="project-tabs__title active-link slide-in-right lucidity-link" 
+              onClick={this.handleLuciditySelect}
+              ref="lucidityLink"
+            >
+              Lucidity
+            </h2>
+            <h2 
+              className="project-tabs__title inactive-link slide-in-left cryptiq-link" 
+              onClick={this.handleCryptiqSelect}
+              ref="cryptiqLink"
+            >
+              CryptiQ
+            </h2>
+          </div>
+
+          <div className="project-wrapper slide-in-bottom-center" ref="projectWrapper">
+            <div className="project-video-box project-video-box--lucidity">
+              <a href={this.state.projectUrl} target="_blank">
+                <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
+                  {this.state.projectView === 'lucidity' ? 
+                    <div className="project-text">
+                      <h2 className="project-text__header">
+                        lucidity
+                      </h2>
+                      <p className="project-text__about u-margin-bottom-m">
+                        An experimental React application that allows users to document their dreams 
+                        and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
+                      </p>
+                      <p className="project-text__hashtags">
+                        #react #redux #front-end development #interactive design #ux design
+                      </p>
+                    </div>
+                    :
+                    <div className="project-text">
+                      <h2 className="project-text__header">
+                        cryptiq
+                      </h2>
+                      <p className="project-text__about u-margin-bottom-m">
+                        A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
+                        process of purchasing Bitcoin, Ethereum, and Iota.
+                      </p>
+                      <p className="project-text__hashtags">
+                        #react #redux #front-end development #interactive design #ux design
+                      </p>
+                    </div>
+                  }
+              </a>
+            </div>  
+            
+            <div className="project-bottom-bar"></div>
+          </div>
         </div>
 
-        <div className="project-wrapper slide-in-bottom-center" ref="projectWrapper">
-        <p>testing</p>
-          <div className="project-video-box project-video-box--lucidity">
-            <a href={this.state.projectUrl} target="_blank">
-              <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
-                {this.state.projectView === 'lucidity' ? 
-                  <div className="project-text">
-                    <h2 className="project-text__header">
-                      lucidity
-                    </h2>
-                    <p className="project-text__about u-margin-bottom-m">
-                      An experimental React application that allows users to document their dreams 
-                      and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
-                    </p>
-                    <p className="project-text__hashtags">
-                      #react #redux #front-end development #interactive design #ux design
-                    </p>
-                  </div>
-                  :
-                  <div className="project-text">
-                    <h2 className="project-text__header">
-                      cryptiq
-                    </h2>
-                    <p className="project-text__about u-margin-bottom-m">
-                      A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
-                      process of purchasing Bitcoin, Ethereum, and Iota.
-                    </p>
-                    <p className="project-text__hashtags">
-                      #react #redux #front-end development #interactive design #ux design
-                    </p>
-                  </div>
-                }
-            </a>
-          </div>  
-          
-          <div className="project-bottom-bar"></div>
-        </div>
       </div>
     )
   }
