@@ -1,3 +1,8 @@
 .portfolio-wrapper {
   position: relative;
+
+  @include width-1800 {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
