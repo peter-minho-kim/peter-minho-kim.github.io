@@ -7,6 +7,7 @@ class PortfolioPage extends React.Component {
     this.state = {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
+      projectGithub: 'https://github.com/peter-minho-kim/lucidity',
       projectPath: './videos/lucidity-demo.mp4'
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
@@ -21,6 +22,7 @@ class PortfolioPage extends React.Component {
           return {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
+            projectGithub: 'https://github.com/peter-minho-kim/lucidity',
             projectPath: './videos/lucidity-demo.mp4'
           }
         })
@@ -44,6 +46,7 @@ class PortfolioPage extends React.Component {
           return {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
+            projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
             projectPath: './videos/cryptiq-demo.mp4'
           }
         })
@@ -107,9 +110,11 @@ class PortfolioPage extends React.Component {
                         #react #redux #front-end development #interactive design #ux design
                       </p>
                       <div className="project-button-wrapper">
-                        <button className="project-button project-button--case">
-                          view case
-                        </button>
+                        <a href={this.state.projectGithub} target="_blank">
+                          <button className="project-button project-button--case">
+                            view github
+                          </button>
+                        </a>
                         <a href={this.state.projectUrl} target="_blank">
                           <button className="project-button">
                             view project
@@ -130,9 +135,11 @@ class PortfolioPage extends React.Component {
                         #react #redux #front-end development #interactive design #ux design
                       </p>
                       <div className="project-button-wrapper">
-                        <button className="project-button">
-                          view case
-                            </button>
+                        <a href={this.state.projectGithub} target="_blank">
+                          <button className="project-button project-button--case">
+                            view github
+                          </button>
+                        </a>
                         <a href={this.state.projectUrl} target="_blank">
                           <button className="project-button">
                             view project

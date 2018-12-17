@@ -10,10 +10,6 @@
     padding: 1rem 1.5rem;
     text-transform: uppercase;
 
-    &:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-
     &:focus {
       outline: none;
     }
@@ -28,5 +24,9 @@
         color: $black;
       }
     }
+  }
+
+  & a:not(:last-child) {
+    margin-right: 1.5rem;
   }
 }
