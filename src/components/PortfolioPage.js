@@ -94,8 +94,7 @@ class PortfolioPage extends React.Component {
           </div>
 
           <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
-            <div className="project-video-box project-video-box--lucidity">
-              
+            <div className="project-video-box project-video-box--lucidity">           
                 <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
                   {this.state.projectView === 'lucidity' ? 
                     <div className="project-text">
@@ -107,7 +106,7 @@ class PortfolioPage extends React.Component {
                         and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
                       </p>
                       <p className="project-text__hashtags u-margin-bottom-m">
-                        #react #redux #front-end development #interactive design #ux design
+                        #react #redux #front-end development #interactive design #ui design
                       </p>
                       <div className="project-button-wrapper">
                         <a href={this.state.projectGithub} target="_blank">
@@ -132,7 +131,7 @@ class PortfolioPage extends React.Component {
                         process of purchasing Bitcoin, Ethereum, and Iota.
                       </p>
                       <p className="project-text__hashtags u-margin-bottom-m">
-                        #react #redux #front-end development #interactive design #ux design
+                        #react #redux #front-end development #interactive design #ui design
                       </p>
                       <div className="project-button-wrapper">
                         <a href={this.state.projectGithub} target="_blank">
@@ -147,11 +146,10 @@ class PortfolioPage extends React.Component {
                         </a>
                       </div>
                     </div>
-                  }
-              
-            </div>  
-            
-            <div className="project-bottom-bar"></div>
+                  }              
+              </div>           
+            <div className="project-bottom-bar">
+            </div>
           </div>
         </div>
 

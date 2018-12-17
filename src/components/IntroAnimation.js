@@ -8,14 +8,20 @@ class IntroAnimation extends React.Component {
     setTimeout(() => {
       this.refs.introAnimationWrapper.style.opacity = '0'
       this.refs.introAnimationWrapper.style.zIndex = '-1'
-    }, 5500)
+    }, 6500)
   }
   render() {
     return (
       <div className="intro-animation-wrapper" ref="introAnimationWrapper">
         <div className="intro-animation">
           <h1 className="intro-animation__text--name">Peter Kim</h1>
-          <h1 className="intro-animation__text--title">Frontend Developer & UI Designer</h1>
+          <h1 className="intro-animation__text--title">
+            Frontend Developer 
+            <br/>  
+            &
+            <br/> 
+            UI Designer
+          </h1>
         </div>
       </div>
     )
