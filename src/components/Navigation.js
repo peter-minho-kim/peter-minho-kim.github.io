@@ -6,6 +6,12 @@ class Navigation extends React.Component {
     this.handlePortfolioLink = this.handlePortfolioLink.bind(this)
     this.handleAboutLink = this.handleAboutLink.bind(this)
     this.handleNavToggle = this.handleNavToggle.bind(this)
+    this.handleNavToggleMouseIn = this.handleNavToggleMouseIn.bind(this)
+    this.handleNavToggleMouseOut = this.handleNavToggleMouseOut.bind(this)
+
+    this.state = {
+      mobileNavOpen: false
+    }
   }
   handleAboutLink() {
     if (window.location.pathname === '/portfolio') {
@@ -49,11 +55,27 @@ class Navigation extends React.Component {
       this.refs.navList.classList.toggle('nav--visible')
       this.refs.navToggleTop.classList.toggle('nav-toggle-top')
       this.refs.navToggleBottom.classList.toggle('nav-toggle-bottom')
+      this.refs.navToggleTop.classList.remove('nav-toggle-top--hover')
+      this.refs.navToggleBottom.classList.remove('nav-toggle-bottom--hover')
       
       const navLinks = document.querySelectorAll('.nav__link')
       navLinks.forEach((link) => {
         link.classList.toggle('fade-in-left')
       })  
+
+      this.setState((prevState) => ({ mobileNavOpen: !prevState.mobileNavOpen }))
+    }
+  }
+  handleNavToggleMouseIn() {
+    if (document.querySelector('nav').classList.value !== 'nav nav-background') {
+      this.refs.navToggleTop.classList.add('nav-toggle-top--hover')
+      this.refs.navToggleBottom.classList.add('nav-toggle-bottom--hover')
+    }
+  }
+  handleNavToggleMouseOut() {
+    if (document.querySelector('nav').classList.value !== 'nav nav-background') {
+      this.refs.navToggleTop.classList.remove('nav-toggle-top--hover')
+      this.refs.navToggleBottom.classList.remove('nav-toggle-bottom--hover')
     }
   }
   componentDidMount() {
@@ -76,7 +98,7 @@ class Navigation extends React.Component {
     return (
       <nav className="nav" ref="nav">
         <div className="nav__mobile-handle" onClick={this.handleNavToggle}>
-          <div className="nav__toggle">
+          <div className="nav__toggle" onMouseOver={this.handleNavToggleMouseIn} onMouseOut={this.handleNavToggleMouseOut}>
             <span className="nav__toggle-line nav__toggle-line--top" ref="navToggleTop">&mdash;</span>
             <span className="nav__toggle-line nav__toggle-line--bottom" ref="navToggleBottom">&mdash;</span>
           </div>

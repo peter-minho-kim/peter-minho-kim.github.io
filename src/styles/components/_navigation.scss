@@ -16,6 +16,7 @@
       top: 0;
       left: 0;
     transform: none;
+    z-index: 1;
   }          
   
   &__list {  
@@ -81,12 +82,8 @@
     height: 45px;
     position: relative;
 
-    &:hover &-line {
-      color: $black;
-    }
-
     &-line {
-      color: darken(#F5F5F5, 20%);
+      color: $black;
       position: absolute;
       transition: all .4s;
     }
@@ -117,11 +114,19 @@
 .nav-toggle-top {
   color: $black;
   transform: translate(3px, 3px) rotate(135deg);
+
+  &--hover {
+    transform: translateX(4px);
+  }
 }
 
 .nav-toggle-bottom {
   color: $black;
   transform: translate(0, -5px) rotate(-135deg);
+
+  &--hover {
+    transform: translateX(-4px);
+  }
 }
 
 .nav--visible {

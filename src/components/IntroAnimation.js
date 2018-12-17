@@ -1,14 +1,14 @@
 import React from 'react'
 
 class IntroAnimation extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
   }
   componentDidMount() {
-    // setTimeout(() => {
-    //   this.refs.introAnimationWrapper.style.opacity = '0'
-    //   this.refs.introAnimationWrapper.style.zIndex = '-1'
-    // }, 5500)
+    setTimeout(() => {
+      this.refs.introAnimationWrapper.style.opacity = '0'
+      this.refs.introAnimationWrapper.style.zIndex = '-1'
+    }, 5500)
   }
   render() {
     return (
