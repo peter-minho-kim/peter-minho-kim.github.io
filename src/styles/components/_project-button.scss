@@ -3,7 +3,7 @@
   justify-content: flex-end;
   
   .project-button {
-    border: none;
+    border: 2px solid $white;
     color: $black;
     font-family: inherit;
     font-size: $d-font;
@@ -16,6 +16,17 @@
 
     &:focus {
       outline: none;
+    }
+
+    &--case {
+      background-color: transparent;
+      color: $white;
+      transition: all .3s;
+
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
     }
   }
 }

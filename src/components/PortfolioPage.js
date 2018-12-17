@@ -107,7 +107,7 @@ class PortfolioPage extends React.Component {
                         #react #redux #front-end development #interactive design #ux design
                       </p>
                       <div className="project-button-wrapper">
-                        <button className="project-button">
+                        <button className="project-button project-button--case">
                           view case
                         </button>
                         <a href={this.state.projectUrl} target="_blank">
