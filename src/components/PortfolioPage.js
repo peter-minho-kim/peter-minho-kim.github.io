@@ -8,9 +8,10 @@ class PortfolioPage extends React.Component {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
       projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-      projectPath: './videos/lucidity-demo.mp4',
+      projectPath: './videos/lucidity-demo-compressed.mp4',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
-      projectHashTags: '#react #redux #front-end development #interactive design #ui design'
+      projectHashTags: '#react #redux #front-end development #interactive design #ui design',
+      projectVideoReadyState: 0
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
@@ -27,7 +28,7 @@ class PortfolioPage extends React.Component {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-            projectPath: './videos/lucidity-demo.mp4',
+            projectPath: './videos/lucidity-demo-compressed.mp4',
             projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.'
           }
         })
@@ -54,7 +55,7 @@ class PortfolioPage extends React.Component {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
-            projectPath: './videos/cryptiq-demo.mp4',
+            projectPath: './videos/cryptiq-demo-compressed.mp4',
             projectInfo: 'A mock cryptocurrency e-commerce platform that takes the user through an intuitive process of purchasing Bitcoin, Ethereum, and Iota.'
           }
         })
@@ -71,6 +72,19 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('active-link')
   }
   componentDidMount() {
+    this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
+    
+    if (this.state.projectVideoReadyState !== 4) {
+      setTimeout(() => {
+        this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
+      })
+    }
+    console.log(this.state)
+    setTimeout(() => {
+      this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
+      console.log(this.state)
+    }, 2000)
+    
     document.body.style.overflow = 'hidden'
     setTimeout(() => {
       this.refs.projectWrapper.classList.remove('slide-in-bottom')
@@ -80,6 +94,7 @@ class PortfolioPage extends React.Component {
       document.body.style.overflowY = 'auto'
       document.body.style.overflowX = 'hidden'
     }, 1500)
+
   }
   render() {
     return (
@@ -104,59 +119,59 @@ class PortfolioPage extends React.Component {
           </div>
 
           <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
-            <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
-                <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
-                  {this.state.projectView === 'lucidity' ? 
-                    <div className="project-text">
-                      <h2 className="project-text__header">
-                        lucidity
-                      </h2>
-                      <p className="project-text__about u-margin-bottom-s">
-                        An experimental React application that allows users to document their dreams 
-                        and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
-                      </p>
-                      <p className="project-text__hashtags u-margin-bottom-m">
-                        {this.state.projectHashTags}
-                      </p>
-                      <div className="project-button-wrapper">
-                        <a href={this.state.projectGithub} target="_blank">
-                          <button className="project-button project-button--case">
-                            view github
-                          </button>
-                        </a>
-                        <a href={this.state.projectUrl} target="_blank">
-                          <button className="project-button">
-                            view project
-                          </button>
-                        </a>
-                      </div>
+            <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">          
+              <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo" ref="videoDemo"></video>
+                {this.state.projectView === 'lucidity' ? 
+                  <div className="project-text">
+                    <h2 className="project-text__header">
+                      lucidity
+                    </h2>
+                    <p className="project-text__about u-margin-bottom-s">
+                      An experimental React application that allows users to document their dreams 
+                      and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
+                    </p>
+                    <p className="project-text__hashtags u-margin-bottom-m">
+                      {this.state.projectHashTags}
+                    </p>
+                    <div className="project-button-wrapper">
+                      <a href={this.state.projectGithub} target="_blank">
+                        <button className="project-button project-button--case">
+                          view github
+                        </button>
+                      </a>
+                      <a href={this.state.projectUrl} target="_blank">
+                        <button className="project-button">
+                          view project
+                        </button>
+                      </a>
                     </div>
-                    :
-                    <div className="project-text">
-                      <h2 className="project-text__header">
-                        cryptiq
-                      </h2>
-                      <p className="project-text__about u-margin-bottom-s">
-                        A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
-                        process of purchasing Bitcoin, Ethereum, and Iota.
-                      </p>
-                      <p className="project-text__hashtags u-margin-bottom-m">
-                        {this.state.projectHashTags}
-                      </p>
-                      <div className="project-button-wrapper">
-                        <a href={this.state.projectGithub} target="_blank">
-                          <button className="project-button project-button--case">
-                            view github
-                          </button>
-                        </a>
-                        <a href={this.state.projectUrl} target="_blank">
-                          <button className="project-button">
-                            view project
-                          </button>
-                        </a>
-                      </div>
+                  </div>
+                  :
+                  <div className="project-text">
+                    <h2 className="project-text__header">
+                      cryptiq
+                    </h2>
+                    <p className="project-text__about u-margin-bottom-s">
+                      A mock cryptocurrency e-commerce platform that takes the user through an intuitive  
+                      process of purchasing Bitcoin, Ethereum, and Iota.
+                    </p>
+                    <p className="project-text__hashtags u-margin-bottom-m">
+                      {this.state.projectHashTags}
+                    </p>
+                    <div className="project-button-wrapper">
+                      <a href={this.state.projectGithub} target="_blank">
+                        <button className="project-button project-button--case">
+                          view github
+                        </button>
+                      </a>
+                      <a href={this.state.projectUrl} target="_blank">
+                        <button className="project-button">
+                          view project
+                        </button>
+                      </a>
                     </div>
-                  }              
+                  </div>
+                }              
               </div>           
             <div className="project-bottom-bar">
             </div>
