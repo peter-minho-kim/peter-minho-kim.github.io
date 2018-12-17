@@ -60,3 +60,18 @@
     }
   }
 }
+
+.project-mobile-info {
+  font-size: $d-font;
+  font-weight: 400;
+
+  @media (min-width: 24.375em) {
+    display: none;
+  }
+
+  &__hashtags {
+    font-size: $s-font;
+    font-weight: 300;
+    text-align: right;
+  }
+}

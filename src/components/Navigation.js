@@ -19,6 +19,7 @@ class Navigation extends React.Component {
       document.querySelector('.lucidity-link').classList.add('slide-out-left')
       document.querySelector('.cryptiq-link').classList.add('slide-out-right')
       document.querySelector('.project-wrapper').classList.add('slide-out-bottom')
+      document.querySelector('.project-mobile-info').classList.add('fade-out')
       setTimeout(() => {
         this.props.history.push('/')
       }, 1000)

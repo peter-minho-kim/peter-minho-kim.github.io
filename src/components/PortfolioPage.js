@@ -8,7 +8,9 @@ class PortfolioPage extends React.Component {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
       projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-      projectPath: './videos/lucidity-demo.mp4'
+      projectPath: './videos/lucidity-demo.mp4',
+      projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
+      projectHashTags: '#react #redux #front-end development #interactive design #ui design'
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
@@ -16,6 +18,8 @@ class PortfolioPage extends React.Component {
   handleLuciditySelect() {
     if (this.state.projectView === 'cryptiq') {
       this.refs.projectWrapper.classList.add('fade-out-in')
+      this.refs.projectMobileInfo.classList.add('fade-out-in')
+      
 
       setTimeout(() => {
         this.setState(() => {
@@ -23,13 +27,15 @@ class PortfolioPage extends React.Component {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-            projectPath: './videos/lucidity-demo.mp4'
+            projectPath: './videos/lucidity-demo.mp4',
+            projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.'
           }
         })
       }, 500)
 
       setTimeout(() => {
         this.refs.projectWrapper.classList.remove('fade-out-in')
+        this.refs.projectMobileInfo.classList.remove('fade-out-in')
       }, 1100)
     }
     this.refs.lucidityLink.classList.add('active-link')
@@ -40,6 +46,7 @@ class PortfolioPage extends React.Component {
   handleCryptiqSelect() {
     if (this.state.projectView === 'lucidity') {
       this.refs.projectWrapper.classList.add('fade-out-in')
+      this.refs.projectMobileInfo.classList.add('fade-out-in')
 
       setTimeout(() => {
         this.setState(() => {
@@ -47,13 +54,15 @@ class PortfolioPage extends React.Component {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
-            projectPath: './videos/cryptiq-demo.mp4'
+            projectPath: './videos/cryptiq-demo.mp4',
+            projectInfo: 'A mock cryptocurrency e-commerce platform that takes the user through an intuitive process of purchasing Bitcoin, Ethereum, and Iota.'
           }
         })
       }, 500)
 
       setTimeout(() => {
         this.refs.projectWrapper.classList.remove('fade-out-in')
+        this.refs.projectMobileInfo.classList.remove('fade-out-in')
       }, 1100)
     }
     this.refs.cryptiqLink.classList.remove('inactive-link')
@@ -67,6 +76,7 @@ class PortfolioPage extends React.Component {
       this.refs.projectWrapper.classList.remove('slide-in-bottom')
       this.refs.lucidityLink.classList.remove('slide-in-right')
       this.refs.cryptiqLink.classList.remove('slide-in-left')
+      this.refs.projectMobileInfo.classList.remove('fade-in')
       document.body.style.overflowY = 'auto'
       document.body.style.overflowX = 'hidden'
     }, 1500)
@@ -94,7 +104,7 @@ class PortfolioPage extends React.Component {
           </div>
 
           <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
-            <div className="project-video-box project-video-box--lucidity">           
+            <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
                 <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo"></video>
                   {this.state.projectView === 'lucidity' ? 
                     <div className="project-text">
@@ -106,7 +116,7 @@ class PortfolioPage extends React.Component {
                         and track statistical sleeping patterns with the intention of helping users become lucid dreamers.
                       </p>
                       <p className="project-text__hashtags u-margin-bottom-m">
-                        #react #redux #front-end development #interactive design #ui design
+                        {this.state.projectHashTags}
                       </p>
                       <div className="project-button-wrapper">
                         <a href={this.state.projectGithub} target="_blank">
@@ -131,7 +141,7 @@ class PortfolioPage extends React.Component {
                         process of purchasing Bitcoin, Ethereum, and Iota.
                       </p>
                       <p className="project-text__hashtags u-margin-bottom-m">
-                        #react #redux #front-end development #interactive design #ui design
+                        {this.state.projectHashTags}
                       </p>
                       <div className="project-button-wrapper">
                         <a href={this.state.projectGithub} target="_blank">
@@ -151,8 +161,15 @@ class PortfolioPage extends React.Component {
             <div className="project-bottom-bar">
             </div>
           </div>
+          <div className="project-mobile-info fade-in" ref="projectMobileInfo">
+            <p className="project-mobile-info__text u-margin-bottom-s">
+              {this.state.projectInfo}
+            </p>
+            <p className="project-mobile-info__hashtags">
+              {this.state.projectHashTags}
+            </p>
+          </div>
         </div>
-
       </div>
     )
   }

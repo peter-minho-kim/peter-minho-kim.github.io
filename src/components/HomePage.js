@@ -7,9 +7,6 @@ class HomePage extends React.Component {
   }
   componentDidMount() {
     document.body.style.overflow = 'hidden'
-    setTimeout(() => {
-      document.body.style.overflow = 'auto'
-    }, 1000)
   }
   render() {
     return (
