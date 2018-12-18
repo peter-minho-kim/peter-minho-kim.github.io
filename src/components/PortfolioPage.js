@@ -8,7 +8,8 @@ class PortfolioPage extends React.Component {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
       projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-      projectPath: './videos/lucidity-demo.mp4',
+      projectVideoPath: './videos/lucidity-demo-compressed.mp4',
+      projectGifPath: './images/lucidity-demo.gif',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
       projectHashTags: '#react #redux #front-end development #interactive design #ui design'
     }
@@ -27,7 +28,8 @@ class PortfolioPage extends React.Component {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-            projectPath: './videos/lucidity-demo.mp4',
+            projectVideoPath: './videos/lucidity-demo-compressed.mp4',
+            projectGifPath: './images/lucidity-demo.gif',
             projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.'
           }
         })
@@ -54,7 +56,8 @@ class PortfolioPage extends React.Component {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
-            projectPath: './videos/cryptiq-demo.mp4',
+            projectVideoPath: './videos/cryptiq-demo-compressed.mp4',
+            projectGifPath: './images/cryptiq-demo.gif',
             projectInfo: 'A mock cryptocurrency e-commerce platform that takes the user through an intuitive process of purchasing Bitcoin, Ethereum, and Iota.'
           }
         })
@@ -105,8 +108,12 @@ class PortfolioPage extends React.Component {
           </div>
 
           <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
-            <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">          
-              <video src={this.state.projectPath} autoPlay loop muted preload="auto" className="video-demo" ref="videoDemo"></video>
+            <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
+              {/Mobi|Android/i.test(navigator.userAgent) ?
+                <img src={this.state.projectGifPath} className="video-demo" />
+                :
+                <video src={this.state.projectVideoPath} autoPlay loop muted preload="auto" className="video-demo"></video>
+              }
                 {this.state.projectView === 'lucidity' ? 
                   <div className="project-text">
                     <h2 className="project-text__header">

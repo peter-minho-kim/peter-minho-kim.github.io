@@ -9,7 +9,7 @@ const Footer = () => (
       <i className="fab fa-github footer__fa"></i>
     </a>
     <a href="mailto:peterkim.developer@gmail.com" className="footer__social-link">
-      <i class="fas fa-envelope footer__fa"></i>
+      <i className="fas fa-envelope footer__fa"></i>
     </a>
   </footer>
 )

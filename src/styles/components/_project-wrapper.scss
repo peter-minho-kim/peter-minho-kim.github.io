@@ -9,11 +9,11 @@
     width: 100%;
   }
 
-  & video {
+  & .video-demo {
     transition: all .3s;
   }
 
-  &:hover video {
+  &:hover .video-demo {
     opacity: .1;
   }
 
@@ -80,4 +80,8 @@
     left: 50%;
   transform: translateX(-50%);
   width: 101%;
+
+  @media (max-width: 31.6875em) {
+    top: 98%;
+  }
 }

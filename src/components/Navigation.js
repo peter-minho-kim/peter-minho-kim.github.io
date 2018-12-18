@@ -116,6 +116,9 @@ class Navigation extends React.Component {
           <li className="nav__link inactive-link nav__social-link github-link" onClick={this.handleNavToggle}>
             <a href="https://github.com/peter-minho-kim" className="inactive-link" target="_blank">github</a>
           </li>
+          <li className="nav__link inactive-link nav__social-link email-link" onClick={this.handleNavToggle}>
+            <a href="mailto:peterkim.developer@gmail.com" className="inactive-link">email</a>
+          </li>
         </ul>
       </nav>
     )
