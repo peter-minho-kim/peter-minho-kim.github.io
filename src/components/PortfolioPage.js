@@ -17,12 +17,13 @@ class PortfolioPage extends React.Component {
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
     this.handleProjectWrapperClick = this.handleProjectWrapperClick.bind(this)
+    this.handleProjectMouseEnter = this.handleProjectMouseEnter.bind(this)
+    this.handleProjectMouseLeave = this.handleProjectMouseLeave.bind(this)
   }
   handleLuciditySelect() {
     if (this.state.projectView === 'cryptiq') {
       this.refs.projectWrapper.classList.add('fade-out-in')
       this.refs.projectMobileInfo.classList.add('fade-out-in')
-      
 
       setTimeout(() => {
         this.setState(() => {
@@ -76,7 +77,25 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('active-link')
   }
   handleProjectWrapperClick() {
-    
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      this.refs.videoDemo.classList.toggle('project-fade-out')
+      this.refs.projectText.classList.toggle('project-text-fade-in')
+      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
+    }
+  }
+  handleProjectMouseEnter() {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      this.refs.videoDemo.classList.toggle('project-fade-out')
+      this.refs.projectText.classList.toggle('project-text-fade-in')
+      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
+    }
+  }
+  handleProjectMouseLeave() {
+    if (!/Mobi|Android/i.test(navigator.userAgent)) {
+      this.refs.videoDemo.classList.toggle('project-fade-out')
+      this.refs.projectText.classList.toggle('project-text-fade-in')
+      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
+    }
   }
   componentDidMount() {
     setTimeout(() => {
@@ -110,7 +129,7 @@ class PortfolioPage extends React.Component {
             </h2>
           </div>
 
-          <div className="project-wrapper slide-in-bottom" onClick={this.handleProjectWrapperClick} ref="projectWrapper">
+          <div className="project-wrapper slide-in-bottom" onMouseEnter={this.handleProjectMouseEnter} onMouseLeave={this.handleProjectMouseLeave} onClick={this.handleProjectWrapperClick} ref="projectWrapper">
             <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
               {/Mobi|Android/i.test(navigator.userAgent) ?
                 <img src={this.state.projectGifPath} className="video-demo" ref="videoDemo" />
@@ -143,7 +162,7 @@ class PortfolioPage extends React.Component {
                     </div>
                   </div>
                   :
-                  <div className="project-text">
+                  <div className="project-text" ref="projectText">
                     <h2 className="project-text__header">
                       cryptiq
                     </h2>
@@ -156,12 +175,12 @@ class PortfolioPage extends React.Component {
                     </p>
                     <div className="project-button-wrapper">
                       <a href={this.state.projectGithub} target="_blank">
-                        <button className="project-button project-button--case">
+                        <button disabled={this.state.projectButtonsDisabled} className="project-button project-button--case">
                           view github
                         </button>
                       </a>
                       <a href={this.state.projectUrl} target="_blank">
-                        <button className="project-button">
+                        <button disabled={this.state.projectButtonsDisabled} className="project-button">
                           view project
                         </button>
                       </a>
