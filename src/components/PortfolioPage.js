@@ -8,10 +8,9 @@ class PortfolioPage extends React.Component {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
       projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-      projectPath: './videos/lucidity-demo-compressed.mp4',
+      projectPath: './videos/lucidity-demo.mp4',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
-      projectHashTags: '#react #redux #front-end development #interactive design #ui design',
-      projectVideoReadyState: 0
+      projectHashTags: '#react #redux #front-end development #interactive design #ui design'
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
@@ -28,7 +27,7 @@ class PortfolioPage extends React.Component {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-            projectPath: './videos/lucidity-demo-compressed.mp4',
+            projectPath: './videos/lucidity-demo.mp4',
             projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.'
           }
         })
@@ -55,7 +54,7 @@ class PortfolioPage extends React.Component {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
-            projectPath: './videos/cryptiq-demo-compressed.mp4',
+            projectPath: './videos/cryptiq-demo.mp4',
             projectInfo: 'A mock cryptocurrency e-commerce platform that takes the user through an intuitive process of purchasing Bitcoin, Ethereum, and Iota.'
           }
         })
@@ -72,19 +71,6 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('active-link')
   }
   componentDidMount() {
-    this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
-    
-    if (this.state.projectVideoReadyState !== 4) {
-      setTimeout(() => {
-        this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
-      })
-    }
-    console.log(this.state)
-    setTimeout(() => {
-      this.setState(() => ({ projectVideoReadyState: this.refs.videoDemo.readyState }))
-      console.log(this.state)
-    }, 2000)
-    
     document.body.style.overflow = 'hidden'
     setTimeout(() => {
       this.refs.projectWrapper.classList.remove('slide-in-bottom')

@@ -8,6 +8,9 @@ const Footer = () => (
     <a href="https://github.com/peter-minho-kim" className="footer__social-link" target="_blank">
       <i className="fab fa-github footer__fa"></i>
     </a>
+    <a href="mailto:peterkim.developer@gmail.com" className="footer__social-link">
+      <i class="fas fa-envelope footer__fa"></i>
+    </a>
   </footer>
 )
 
