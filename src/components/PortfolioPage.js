@@ -46,6 +46,11 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('inactive-link')
     this.refs.cryptiqLink.classList.remove('active-link')
     this.refs.cryptiqLink.classList.add('inactive-link')
+
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      this.refs.videoDemo.classList.remove('project-fade-out')
+      this.refs.projectText.classList.remove('project-text-fade-in')
+    }
   }
   handleCryptiqSelect() {
     if (this.state.projectView === 'lucidity') {
@@ -74,6 +79,11 @@ class PortfolioPage extends React.Component {
     this.refs.cryptiqLink.classList.add('active-link')
     this.refs.lucidityLink.classList.add('inactive-link')
     this.refs.lucidityLink.classList.remove('active-link')
+
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      this.refs.videoDemo.classList.remove('project-fade-out')
+      this.refs.projectText.classList.remove('project-text-fade-in')
+    }
   }
   handleProjectWrapperClick() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -186,7 +196,7 @@ class PortfolioPage extends React.Component {
                     <p className="project-text__hashtags u-margin-bottom-m">
                       {this.state.projectHashTags}
                     </p>
-                    <div className="project-button-wrapper">
+                    <div className="project-button-wrapper" ref="projectButtonWrapper">
                       <a href={this.state.projectGithub} className="project-link" target="_blank">
                         <button className="project-button project-button--case">
                           view github
