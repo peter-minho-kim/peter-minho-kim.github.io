@@ -34,8 +34,8 @@ class Navigation extends React.Component {
   handlePortfolioLink() {
     if (window.location.pathname === '/') {
       document.body.style.overflow = 'hidden'
-      document.querySelector('.hello-container').classList.remove('slide-out-right')
-      document.querySelector('.hello-container').classList.add('slide-out-right')
+      document.querySelector('.hello-container').classList.remove('fade-in')
+      document.querySelector('.hello-container').classList.add('fade-out')
       document.querySelector('.about__portrait').classList.remove('slide-in-right')
       document.querySelector('.about__portrait').classList.add('slide-out-left')
       document.querySelector('.about__content').classList.remove('slide-in-bottom')

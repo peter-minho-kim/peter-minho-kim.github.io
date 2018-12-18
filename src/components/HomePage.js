@@ -5,14 +5,11 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props)
   }
-  componentDidMount() {
-
-  }
   render() {
     return (
       <div>
         <Navigation history={this.props.history} />
-        <div className="hello-container fade-in">
+        <div className="hello-container fade-in" ref="helloContainer">
           hello
         </div>
 
