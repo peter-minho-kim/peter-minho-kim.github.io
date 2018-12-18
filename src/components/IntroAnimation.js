@@ -8,6 +8,7 @@ class IntroAnimation extends React.Component {
     setTimeout(() => {
       this.refs.introAnimationWrapper.style.opacity = '0'
       this.refs.introAnimationWrapper.style.zIndex = '-1'
+      document.body.style.overflow = 'auto'
     }, 6500)
   }
   render() {

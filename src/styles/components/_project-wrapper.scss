@@ -13,11 +13,11 @@
     transition: all .3s;
   }
 
-  &:hover .video-demo, &:active .video-demo {
+  &:hover .video-demo {
     opacity: .1;
   }
 
-  &:hover .project-text, &:active .project-text {
+  &:hover .project-text {
     opacity: 1;
   }
 
@@ -84,4 +84,12 @@
   @media (max-width: 31.6875em) {
     top: 98%;
   }
+}
+
+.project-fade-out {
+  opacity: .1;
+}
+
+.project-text-fade-in {
+  opacity: 1;
 }

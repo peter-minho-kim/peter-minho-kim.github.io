@@ -10,7 +10,7 @@ import PortfolioPage from '../components/PortfolioPage'
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      <IntroAnimation />
+      {/*<IntroAnimation />*/}
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/about" component={AboutPage} />

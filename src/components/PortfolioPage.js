@@ -11,10 +11,12 @@ class PortfolioPage extends React.Component {
       projectVideoPath: './videos/lucidity-demo-compressed.mp4',
       projectGifPath: './images/lucidity-demo.gif',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
-      projectHashTags: '#react #redux #front-end development #interactive design #ui design'
+      projectHashTags: '#react #redux #front-end development #interactive design #ui design',
+      projectButtonsDisabled: true
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
+    this.handleProjectWrapperClick = this.handleProjectWrapperClick.bind(this)
   }
   handleLuciditySelect() {
     if (this.state.projectView === 'cryptiq') {
@@ -73,6 +75,9 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.add('inactive-link')
     this.refs.lucidityLink.classList.remove('active-link')
   }
+  handleProjectWrapperClick() {
+    
+  }
   componentDidMount() {
     setTimeout(() => {
       this.refs.projectWrapper.classList.remove('slide-in-bottom')
@@ -105,15 +110,15 @@ class PortfolioPage extends React.Component {
             </h2>
           </div>
 
-          <div className="project-wrapper slide-in-bottom" ref="projectWrapper">
+          <div className="project-wrapper slide-in-bottom" onClick={this.handleProjectWrapperClick} ref="projectWrapper">
             <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
               {/Mobi|Android/i.test(navigator.userAgent) ?
-                <img src={this.state.projectGifPath} className="video-demo" />
+                <img src={this.state.projectGifPath} className="video-demo" ref="videoDemo" />
                 :
-                <video src={this.state.projectVideoPath} autoPlay loop muted preload="auto" className="video-demo"></video>
+                <video src={this.state.projectVideoPath} autoPlay loop muted preload="auto" className="video-demo" ref="videoDemo"></video>
               }
                 {this.state.projectView === 'lucidity' ? 
-                  <div className="project-text">
+                  <div className="project-text" ref="projectText">
                     <h2 className="project-text__header">
                       lucidity
                     </h2>
@@ -124,14 +129,14 @@ class PortfolioPage extends React.Component {
                     <p className="project-text__hashtags u-margin-bottom-m">
                       {this.state.projectHashTags}
                     </p>
-                    <div className="project-button-wrapper">
+                    <div className="project-button-wrapper" ref="projectButtonWrapper">
                       <a href={this.state.projectGithub} target="_blank">
-                        <button className="project-button project-button--case">
+                        <button disabled={this.state.projectButtonsDisabled} className="project-button project-button--case">
                           view github
                         </button>
                       </a>
                       <a href={this.state.projectUrl} target="_blank">
-                        <button className="project-button">
+                        <button disabled={this.state.projectButtonsDisabled} className="project-button">
                           view project
                         </button>
                       </a>
