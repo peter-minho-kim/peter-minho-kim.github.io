@@ -74,7 +74,6 @@ class PortfolioPage extends React.Component {
     this.refs.lucidityLink.classList.remove('active-link')
   }
   componentDidMount() {
-    document.body.style.overflow = 'hidden'
     setTimeout(() => {
       this.refs.projectWrapper.classList.remove('slide-in-bottom')
       this.refs.lucidityLink.classList.remove('slide-in-right')
@@ -83,7 +82,6 @@ class PortfolioPage extends React.Component {
       document.body.style.overflowY = 'auto'
       document.body.style.overflowX = 'hidden'
     }, 1500)
-
   }
   render() {
     return (

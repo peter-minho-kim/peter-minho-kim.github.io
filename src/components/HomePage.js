@@ -6,13 +6,13 @@ class HomePage extends React.Component {
     super(props)
   }
   componentDidMount() {
-    document.body.style.overflow = 'hidden'
+
   }
   render() {
     return (
       <div>
         <Navigation history={this.props.history} />
-        <div className="hello-container slide-in-left">
+        <div className="hello-container fade-in">
           hello
         </div>
 

@@ -13,11 +13,11 @@
     transition: all .3s;
   }
 
-  &:hover .video-demo {
+  &:hover .video-demo, &:active .video-demo {
     opacity: .1;
   }
 
-  &:hover .project-text {
+  &:hover .project-text, &:active .project-text {
     opacity: 1;
   }
 

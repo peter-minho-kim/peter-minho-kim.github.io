@@ -251,41 +251,51 @@
 }
 
 .slide-in-left {
-  animation: slideInLeft .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideInLeft .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: slideInLeft .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-out-left {
-  animation: slideOutLeft .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideOutLeft .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: slideOutLeft .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-in-right {
-  animation: slideInRight .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideInRight .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: slideInRight .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-out-right {
-  animation: slideOutRight .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideOutRight .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: slideOutRight .9s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-in-bottom {
-  animation: slideInBottom .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideInBottom .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: slideInBottom .7s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .slide-out-bottom {
-  animation: slideOutBottom .7s cubic-bezier(0.590, 0.575, 0.565, 1.000) both;
+  -webkit-animation: slideOutBottom .7s cubic-bezier(0.590, 0.575, 0.565, 1.000) both;
+          animation: slideOutBottom .7s cubic-bezier(0.590, 0.575, 0.565, 1.000) both;
 }
 
 .fade-out-in {
-  animation: fadeOutIn 1.2s cubic-bezier(0.390, 0.575, 0.390, 1.000) both;
+  -webkit-animation: fadeOutIn 1.2s cubic-bezier(0.390, 0.575, 0.390, 1.000) both;
+          animation: fadeOutIn 1.2s cubic-bezier(0.390, 0.575, 0.390, 1.000) both;
 }
 
 .fade-in {
-  animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .fade-out {
- animation: fadeOut 1.2s cubic-bezier(0.390, 0.575, 0.365, 1.000) both;
+  -webkit-animation: fadeOut 1.2s cubic-bezier(0.390, 0.575, 0.365, 1.000) both;
+          animation: fadeOut 1.2s cubic-bezier(0.390, 0.575, 0.365, 1.000) both;
 }
 
 .fade-in-left {
-  animation: fadeInLeft .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fadeInLeft .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fadeInLeft .3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
