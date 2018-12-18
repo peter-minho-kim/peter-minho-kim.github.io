@@ -11,8 +11,7 @@ class PortfolioPage extends React.Component {
       projectVideoPath: './videos/lucidity-demo-compressed.mp4',
       projectGifPath: './images/lucidity-demo.gif',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
-      projectHashTags: '#react #redux #front-end development #interactive design #ui design',
-      projectButtonsDisabled: true
+      projectHashTags: '#react #redux #front-end development #interactive design #ui design'
     }
     this.handleLuciditySelect = this.handleLuciditySelect.bind(this)
     this.handleCryptiqSelect = this.handleCryptiqSelect.bind(this)
@@ -80,21 +79,28 @@ class PortfolioPage extends React.Component {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
       this.refs.videoDemo.classList.toggle('project-fade-out')
       this.refs.projectText.classList.toggle('project-text-fade-in')
-      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
+      this.refs.videoDemo.classList.length === 1 ? 
+        document.querySelector('.project-link').style.zIndex = '-5' : 
+        document.querySelector('.project-link').style.zIndex = '5'
+
+      const projectLinks = document.querySelectorAll('.project-link')
+      projectLinks.forEach((link) => {
+        this.refs.videoDemo.classList.length === 1 ?
+        link.style.zIndex = '-5' :
+        link.style.zIndex = '5'
+      })
     }
   }
   handleProjectMouseEnter() {
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
       this.refs.videoDemo.classList.toggle('project-fade-out')
       this.refs.projectText.classList.toggle('project-text-fade-in')
-      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
     }
   }
   handleProjectMouseLeave() {
     if (!/Mobi|Android/i.test(navigator.userAgent)) {
       this.refs.videoDemo.classList.toggle('project-fade-out')
       this.refs.projectText.classList.toggle('project-text-fade-in')
-      this.setState((prevState) => ({ projectButtonsDisabled: !prevState.projectButtonsDisabled }))
     }
   }
   componentDidMount() {
@@ -106,6 +112,13 @@ class PortfolioPage extends React.Component {
       document.body.style.overflowY = 'auto'
       document.body.style.overflowX = 'hidden'
     }, 1500)
+
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+      const projectLinks = document.querySelectorAll('.project-link')
+      projectLinks.forEach((link) => {
+        link.style.zIndex = '-5'
+      })
+    }
   }
   render() {
     return (
@@ -149,13 +162,13 @@ class PortfolioPage extends React.Component {
                       {this.state.projectHashTags}
                     </p>
                     <div className="project-button-wrapper" ref="projectButtonWrapper">
-                      <a href={this.state.projectGithub} target="_blank">
-                        <button disabled={this.state.projectButtonsDisabled} className="project-button project-button--case">
+                      <a href={this.state.projectGithub} className="project-link" target="_blank">
+                        <button className="project-button project-button--case">
                           view github
                         </button>
                       </a>
-                      <a href={this.state.projectUrl} target="_blank">
-                        <button disabled={this.state.projectButtonsDisabled} className="project-button">
+                      <a href={this.state.projectUrl} className="project-link" target="_blank">
+                        <button className="project-button">
                           view project
                         </button>
                       </a>
@@ -174,13 +187,13 @@ class PortfolioPage extends React.Component {
                       {this.state.projectHashTags}
                     </p>
                     <div className="project-button-wrapper">
-                      <a href={this.state.projectGithub} target="_blank">
-                        <button disabled={this.state.projectButtonsDisabled} className="project-button project-button--case">
+                      <a href={this.state.projectGithub} className="project-link" target="_blank">
+                        <button className="project-button project-button--case">
                           view github
                         </button>
                       </a>
-                      <a href={this.state.projectUrl} target="_blank">
-                        <button disabled={this.state.projectButtonsDisabled} className="project-button">
+                      <a href={this.state.projectUrl} className="project-link" target="_blank">
+                        <button className="project-button">
                           view project
                         </button>
                       </a>
