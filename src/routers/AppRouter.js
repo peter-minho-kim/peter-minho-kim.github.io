@@ -4,18 +4,16 @@ import AboutPage from '../components/AboutPage'
 import Footer from '../components/Footer'
 import HomePage from '../components/HomePage'
 import IntroAnimation from '../components/IntroAnimation'
-import NotFoundPage from '../components/NotFoundPage'
 import PortfolioPage from '../components/PortfolioPage'
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
-      {/*<IntroAnimation />*/}
+      <IntroAnimation />
       <Switch>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/about" component={AboutPage} />
         <Route path="/portfolio" component={PortfolioPage} />
-        <Route component={NotFoundPage} />
       </Switch>
       <Footer />
     </div>
