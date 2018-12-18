@@ -8,8 +8,8 @@ class PortfolioPage extends React.Component {
       projectView: 'lucidity',
       projectUrl: 'https://lucidity-app.herokuapp.com/',
       projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-      projectVideoPath: './videos/lucidity-demo-compressed.mp4',
-      projectGifPath: './images/lucidity-demo.gif',
+      projectVideoPath: './videos/lucidity-demo.mp4',
+      projectImgPath: './images/lucidity-screenshot.jpg',
       projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.',
       projectHashTags: '#react #redux #front-end development #interactive design #ui design'
     }
@@ -30,8 +30,8 @@ class PortfolioPage extends React.Component {
             projectView: 'lucidity',
             projectUrl: 'https://lucidity-app.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/lucidity',
-            projectVideoPath: './videos/lucidity-demo-compressed.mp4',
-            projectGifPath: './images/lucidity-demo.gif',
+            projectVideoPath: './videos/lucidity-demo.mp4',
+            projectImgPath: './images/lucidity-screenshot.jpg',
             projectInfo: 'An experimental React application that allows users to document their dreams and track statistical sleeping patterns with the intention of helping users become lucid dreamers.'
           }
         })
@@ -63,8 +63,8 @@ class PortfolioPage extends React.Component {
             projectView: 'cryptiq',
             projectUrl: 'https://cryptiq.herokuapp.com/',
             projectGithub: 'https://github.com/peter-minho-kim/cryptiq',
-            projectVideoPath: './videos/cryptiq-demo-compressed.mp4',
-            projectGifPath: './images/cryptiq-demo.gif',
+            projectVideoPath: './videos/cryptiq-demo.mp4',
+            projectImgPath: './images/cryptiq-screenshot.jpg',
             projectInfo: 'A mock cryptocurrency e-commerce platform that takes the user through an intuitive process of purchasing Bitcoin, Ethereum, and Iota.'
           }
         })
@@ -155,9 +155,9 @@ class PortfolioPage extends React.Component {
           <div className="project-wrapper slide-in-bottom" onMouseEnter={this.handleProjectMouseEnter} onMouseLeave={this.handleProjectMouseLeave} onClick={this.handleProjectWrapperClick} ref="projectWrapper">
             <div className="project-video-box project-video-box--lucidity u-margin-bottom-s">           
               {/Mobi|Android/i.test(navigator.userAgent) ?
-                <img src={this.state.projectGifPath} className="video-demo" ref="videoDemo" />
+                <img src={this.state.projectImgPath} className="video-demo" ref="videoDemo" />
                 :
-                <video src={this.state.projectVideoPath} autoPlay loop muted preload="auto" className="video-demo" ref="videoDemo"></video>
+                <video src={this.state.projectVideoPath} autoPlay loop muted preload="metadata" type="video/mp4" className="video-demo" ref="videoDemo"></video>
               }
                 {this.state.projectView === 'lucidity' ? 
                   <div className="project-text" ref="projectText">
