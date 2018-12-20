@@ -109,7 +109,7 @@ class Navigation extends React.Component {
           <li className="nav__link active-link about-link" onClick={this.handleAboutLink} ref="aboutLink">about</li>
           <li className="nav__link inactive-link portfolio-link" onClick={this.handlePortfolioLink} ref="portfolioLink">portfolio</li>
           <li className="nav__link resume-link" id="nav__link--resume" onClick={this.handleNavToggle}>
-            <a href="/assets/peter-kim-resume.pdf" className="inactive-link" target="_blank">resume</a>
+            <a href="/assets/Peter_Kim_Resume.pdf" className="inactive-link" target="_blank">resume</a>
           </li>
           <li className="nav__link inactive-link nav__social-link linkedin-link" onClick={this.handleNavToggle}>
             <a href="https://www.linkedin.com/in/peter-kim-developer/" className="inactive-link" target="_blank">linkedin</a>
@@ -118,7 +118,7 @@ class Navigation extends React.Component {
             <a href="https://github.com/peter-minho-kim" className="inactive-link" target="_blank">github</a>
           </li>
           <li className="nav__link inactive-link nav__social-link email-link" onClick={this.handleNavToggle}>
-            <a href="mailto:peterkim.developer@gmail.com" className="inactive-link">email</a>
+            <a href="mailto:peter.minho.kim@gmail.com" className="inactive-link">email</a>
           </li>
         </ul>
       </nav>
