@@ -22,8 +22,10 @@ class Navigation extends React.Component {
       document.querySelector('.project-mobile-info').classList.add('fade-out')
       setTimeout(() => {
         this.props.history.push('/')
-        document.body.style.overflow = 'auto'
       }, 1000)
+      setTimeout(() => {
+        document.body.style.overflow = 'auto'
+      }, 2000)
     }
     this.refs.aboutLink.classList.add('active-link')
     this.refs.aboutLink.classList.remove('inactive-link')
