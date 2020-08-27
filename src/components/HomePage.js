@@ -17,8 +17,8 @@ class HomePage extends React.Component {
           <div className="about__portrait slide-in-right u-margin-bottom-s"></div>
           <div className="about__content slide-in-bottom u-margin-bottom-m">
             <p className="about__content__text">
-              I'm Peter Kim, software engineer, user interface designer, and
-              lover of tacos.
+              I'm Peter Kim, software engineer, user interface designer, and my
+              mom's favorite.
             </p>
             <p className="about__content__text">
               Connect with me on{' '}
