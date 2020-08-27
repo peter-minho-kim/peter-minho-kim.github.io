@@ -1,3 +1,10 @@
+.portfolio-wrapper-container {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .portfolio-wrapper {
   position: relative;
 
