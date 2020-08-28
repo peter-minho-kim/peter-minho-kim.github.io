@@ -16,13 +16,7 @@ class IntroAnimation extends React.Component {
       <div className="intro-animation-wrapper" ref="introAnimationWrapper">
         <div className="intro-animation">
           <h1 className="intro-animation__text--name">Peter Kim</h1>
-          <h1 className="intro-animation__text--title">
-            Software Engineer
-            <br />
-            &
-            <br />
-            UI Designer
-          </h1>
+          <h1 className="intro-animation__text--title">Software Engineer</h1>
         </div>
       </div>
     );
